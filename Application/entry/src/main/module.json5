@@ -34,6 +34,7 @@
     ],
     "requestPermissions": [
       {
+        //申请权限：该应用需要访问互联网
         "name": "ohos.permission.INTERNET"
       },
       {

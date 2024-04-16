@@ -6,6 +6,8 @@
     "pages/CloudFunction",
     "pages/CloudStorage",
     "pages/CloudDb/DbInsert",
-    "pages/MyIndex"
+    "pages/MyIndex",
+    "pages/MyLogin",
+    "pages/MyWelcome"
   ]
 }
