@@ -8,6 +8,7 @@
     "pages/CloudDb/DbInsert",
     "pages/MyIndex",
     "pages/MyLogin",
-    "pages/MyWelcome"
+    "pages/MyWelcome",
+    "pages/MyLoginCustom"
   ]
 }
