@@ -9,6 +9,7 @@
     "pages/MyIndex",
     "pages/MyLogin",
     "pages/MyWelcome",
-    "pages/MyLoginCustom"
+    "pages/MyLoginCustom",
+    "pages/PersonSet"
   ]
 }

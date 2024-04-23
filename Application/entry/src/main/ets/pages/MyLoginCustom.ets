@@ -103,8 +103,10 @@ struct MyLoginCustom {
         }
       })
       const user= result.getUser()
+      //将用户信息存储到AppStorage以便下一个页面获取当前用户信息
+      AppStorage.SetOrCreate('user',user)
       //登录成功调整页面
-      router.replaceUrl({url:'pages/MyWelcome'})
+      router.replaceUrl({url:'pages/PersonSet'})
       hilog.info(0,'Login','Success')
     } catch (e) {
       AlertDialog.show({title:'错误',message:'登录失败'})
