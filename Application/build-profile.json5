@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\ASUS\\.ohos\\config\\auto_debug_Application_com.hzp.function_30086000548009275.cer",
+          "storePassword": "0000001B0D497E38B79A6700E05DA356DC3D230DEB47503EE693A111A3EE4343AB643E345A74D845B6ECA2",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B0FA489FFC9A2E295A1167526DC8F1EAC760DEB0709B7193E5FFA2CF843CF2D0BB2997A14A96663",
+          "profile": "C:\\Users\\ASUS\\.ohos\\config\\auto_debug_Application_com.hzp.function_30086000548009275.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\ASUS\\.ohos\\config\\auto_debug_Application_com.hzp.function_30086000548009275.p12"
+        }
+      }
+    ],
     "compileSdkVersion": 9,
     "compatibleSdkVersion": 9,
     "products": [
