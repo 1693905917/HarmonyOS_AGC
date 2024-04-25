@@ -17,6 +17,19 @@ struct MyLoginCustom {
   @State phoneNumber:string =''
   //记录验证码
   @State verifyCode:string =''
+
+  async aboutToAppear() {
+    try {
+      const user = await cloud.auth().getCurrentUser()
+      if (user != null) {
+        AppStorage.SetOrCreate('user', user) // 存
+        router.replaceUrl({ url: 'pages/PersonSet' })
+      }
+    } catch (e) {
+      hilog.error(0, 'Login', JSON.stringify(e))
+    }
+  }
+
   build() {
     Row() {
       Column({ space: 10 }) {

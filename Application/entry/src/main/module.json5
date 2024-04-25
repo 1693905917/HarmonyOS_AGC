@@ -35,19 +35,25 @@
     "requestPermissions": [
       {
         //申请权限：该应用需要访问互联网
-        "name": "ohos.permission.INTERNET"
+        "name": "ohos.permission.INTERNET"  //ohos.permission.INTERNET是系统权限，这个不需要用户去授权，这个只要你配置文件写完了，就自动开通
       },
       {
+        //READ_MEDIA:读取媒体权限  就是它能够去读取那个照片内容  这个权限是要用户去授权的
         "name": "ohos.permission.READ_MEDIA",
+        //reason:给用户的提示信息
         "reason": "$string:media_permission_reason",
+        //usedScene：哪些场景下需要用到这个权限
         "usedScene": {
           "abilities": [
+            //abilities里面填充的是EntryAbility 那就是EntryAbility里面所有的页面它都拥有这个权限，都能够在这些页面里读取用户的照片
             "EntryAbility"
           ],
+          //when有两项取值：1.inuse:就是在你使用这个应用程序的时候（前台）它拥有权限  2.always:就是不管是这个程序在前台、还是在后台都拥有这个权限
           "when": "inuse"
         }
       },
       {
+        //MEDIA_LOCATION:读取媒体地理位置信息  就是它允许用户去读取媒体中的地理位置信息  这个权限是要用户去授权的
         "name": "ohos.permission.MEDIA_LOCATION",
         "reason": "$string:media_permission_reason",
         "usedScene": {
