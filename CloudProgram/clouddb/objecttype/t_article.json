@@ -1,0 +1,75 @@
+{
+  "fields": [
+    {
+      "belongPrimaryKey": true,
+      "fieldName": "id",
+      "fieldType": "IntAutoIncrement",
+      "isNeedEncrypt": false,
+      "notNull": true
+    },
+    {
+      "belongPrimaryKey": false,
+      "fieldName": "title",
+      "fieldType": "String",
+      "isNeedEncrypt": false,
+      "notNull": false
+    },
+    {
+      "belongPrimaryKey": false,
+      "fieldName": "uid",
+      "fieldType": "String",
+      "isNeedEncrypt": false,
+      "notNull": false
+    },
+    {
+      "belongPrimaryKey": false,
+      "fieldName": "createTime",
+      "fieldType": "Date",
+      "isNeedEncrypt": false,
+      "notNull": false
+    }
+  ],
+  "indexes": [
+    {
+      "indexName": "id_idx",
+      "indexList": [
+        {
+          "fieldName": "id",
+          "sortType": "DESC"
+        }
+      ]
+    }
+  ],
+  "objectTypeName": "t_article",
+  "permissions": [
+    {
+      "rights": [
+        "Read"
+      ],
+      "role": "World"
+    },
+    {
+      "rights": [
+        "Read",
+        "Upsert"
+      ],
+      "role": "Authenticated"
+    },
+    {
+      "rights": [
+        "Read",
+        "Upsert",
+        "Delete"
+      ],
+      "role": "Creator"
+    },
+    {
+      "rights": [
+        "Read",
+        "Upsert",
+        "Delete"
+      ],
+      "role": "Administrator"
+    }
+  ]
+}

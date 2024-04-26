@@ -1,4 +1,4 @@
 {
-	"defaultCloudDBZoneName": "default",
+	"defaultCloudDBZoneName": "test",
 	"defaultDataStorageLocation": "CN"
 }

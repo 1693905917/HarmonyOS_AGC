@@ -1,6 +1,39 @@
 {
-	"schemaVersion":1,
+	"schemaVersion":4,
 	"permissions":[
+		{
+			"permissions":[
+				{
+					"role":"World",
+					"rights":[
+						"Read"
+					]
+				},
+				{
+					"role":"Authenticated",
+					"rights":[
+						"Read"
+					]
+				},
+				{
+					"role":"Creator",
+					"rights":[
+						"Read",
+						"Upsert",
+						"Delete"
+					]
+				},
+				{
+					"role":"Administrator",
+					"rights":[
+						"Read",
+						"Upsert",
+						"Delete"
+					]
+				}
+			],
+			"objectTypeName":"t_student"
+		},
 		{
 			"permissions":[
 				{
@@ -33,41 +66,23 @@
 					]
 				}
 			],
-			"objectTypeName":"Post"
+			"objectTypeName":"t_article"
 		}
 	],
 	"objectTypes":[
 		{
 			"indexes":[
 				{
-					"indexName":"insertDate",
+					"indexName":"id_idx",
 					"indexList":[
 						{
-							"fieldName":"insertDate",
-							"sortType":"DESC"
-						}
-					]
-				},
-				{
-					"indexName":"likeCount",
-					"indexList":[
-						{
-							"fieldName":"likeCount",
-							"sortType":"DESC"
-						}
-					]
-				},
-				{
-					"indexName":"userId",
-					"indexList":[
-						{
-							"fieldName":"userId",
+							"fieldName":"id",
 							"sortType":"ASC"
 						}
 					]
 				}
 			],
-			"objectTypeName":"Post",
+			"objectTypeName":"t_student",
 			"fields":[
 				{
 					"isNeedEncrypt":false,
@@ -75,25 +90,7 @@
 					"notNull":true,
 					"isSensitive":false,
 					"belongPrimaryKey":true,
-					"fieldType":"LongAutoIncrement"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"userId",
-					"notNull":true,
-					"isSensitive":false,
-					"defaultValue":"",
-					"belongPrimaryKey":false,
-					"fieldType":"String"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"content",
-					"notNull":true,
-					"isSensitive":false,
-					"defaultValue":"",
-					"belongPrimaryKey":false,
-					"fieldType":"String"
+					"fieldType":"IntAutoIncrement"
 				},
 				{
 					"isNeedEncrypt":false,
@@ -105,7 +102,39 @@
 				},
 				{
 					"isNeedEncrypt":false,
-					"fieldName":"profilePicture",
+					"fieldName":"age",
+					"notNull":false,
+					"isSensitive":false,
+					"belongPrimaryKey":false,
+					"fieldType":"Short"
+				}
+			]
+		},
+		{
+			"indexes":[
+				{
+					"indexName":"id_idx",
+					"indexList":[
+						{
+							"fieldName":"id",
+							"sortType":"DESC"
+						}
+					]
+				}
+			],
+			"objectTypeName":"t_article",
+			"fields":[
+				{
+					"isNeedEncrypt":false,
+					"fieldName":"id",
+					"notNull":true,
+					"isSensitive":false,
+					"belongPrimaryKey":true,
+					"fieldType":"IntAutoIncrement"
+				},
+				{
+					"isNeedEncrypt":false,
+					"fieldName":"title",
 					"notNull":false,
 					"isSensitive":false,
 					"belongPrimaryKey":false,
@@ -113,29 +142,19 @@
 				},
 				{
 					"isNeedEncrypt":false,
-					"fieldName":"insertDate",
+					"fieldName":"uid",
+					"notNull":false,
+					"isSensitive":false,
+					"belongPrimaryKey":false,
+					"fieldType":"String"
+				},
+				{
+					"isNeedEncrypt":false,
+					"fieldName":"createTime",
 					"notNull":false,
 					"isSensitive":false,
 					"belongPrimaryKey":false,
 					"fieldType":"Date"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"likes",
-					"notNull":true,
-					"isSensitive":false,
-					"defaultValue":"[]",
-					"belongPrimaryKey":false,
-					"fieldType":"String"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"likeCount",
-					"notNull":true,
-					"isSensitive":false,
-					"defaultValue":"0",
-					"belongPrimaryKey":false,
-					"fieldType":"Integer"
 				}
 			]
 		}
