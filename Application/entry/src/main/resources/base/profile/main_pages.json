@@ -10,6 +10,7 @@
     "pages/MyLogin",
     "pages/MyWelcome",
     "pages/MyLoginCustom",
-    "pages/PersonSet"
+    "pages/PersonSet",
+    "pages/StudentPage"
   ]
 }

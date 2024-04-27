@@ -1,162 +1,162 @@
 {
-	"schemaVersion":4,
-	"permissions":[
-		{
-			"permissions":[
-				{
-					"role":"World",
-					"rights":[
-						"Read"
-					]
-				},
-				{
-					"role":"Authenticated",
-					"rights":[
-						"Read"
-					]
-				},
-				{
-					"role":"Creator",
-					"rights":[
-						"Read",
-						"Upsert",
-						"Delete"
-					]
-				},
-				{
-					"role":"Administrator",
-					"rights":[
-						"Read",
-						"Upsert",
-						"Delete"
-					]
-				}
-			],
-			"objectTypeName":"t_student"
-		},
-		{
-			"permissions":[
-				{
-					"role":"World",
-					"rights":[
-						"Read"
-					]
-				},
-				{
-					"role":"Authenticated",
-					"rights":[
-						"Read",
-						"Upsert"
-					]
-				},
-				{
-					"role":"Creator",
-					"rights":[
-						"Read",
-						"Upsert",
-						"Delete"
-					]
-				},
-				{
-					"role":"Administrator",
-					"rights":[
-						"Read",
-						"Upsert",
-						"Delete"
-					]
-				}
-			],
-			"objectTypeName":"t_article"
-		}
-	],
-	"objectTypes":[
-		{
-			"indexes":[
-				{
-					"indexName":"id_idx",
-					"indexList":[
-						{
-							"fieldName":"id",
-							"sortType":"ASC"
-						}
-					]
-				}
-			],
-			"objectTypeName":"t_student",
-			"fields":[
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"id",
-					"notNull":true,
-					"isSensitive":false,
-					"belongPrimaryKey":true,
-					"fieldType":"IntAutoIncrement"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"name",
-					"notNull":false,
-					"isSensitive":false,
-					"belongPrimaryKey":false,
-					"fieldType":"String"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"age",
-					"notNull":false,
-					"isSensitive":false,
-					"belongPrimaryKey":false,
-					"fieldType":"Short"
-				}
-			]
-		},
-		{
-			"indexes":[
-				{
-					"indexName":"id_idx",
-					"indexList":[
-						{
-							"fieldName":"id",
-							"sortType":"DESC"
-						}
-					]
-				}
-			],
-			"objectTypeName":"t_article",
-			"fields":[
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"id",
-					"notNull":true,
-					"isSensitive":false,
-					"belongPrimaryKey":true,
-					"fieldType":"IntAutoIncrement"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"title",
-					"notNull":false,
-					"isSensitive":false,
-					"belongPrimaryKey":false,
-					"fieldType":"String"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"uid",
-					"notNull":false,
-					"isSensitive":false,
-					"belongPrimaryKey":false,
-					"fieldType":"String"
-				},
-				{
-					"isNeedEncrypt":false,
-					"fieldName":"createTime",
-					"notNull":false,
-					"isSensitive":false,
-					"belongPrimaryKey":false,
-					"fieldType":"Date"
-				}
-			]
-		}
-	]
+  "schemaVersion": 4,
+  "permissions": [
+    {
+      "permissions": [
+        {
+          "role": "World",
+          "rights": [
+            "Read"
+          ]
+        },
+        {
+          "role": "Authenticated",
+          "rights": [
+            "Read"
+          ]
+        },
+        {
+          "role": "Creator",
+          "rights": [
+            "Read",
+            "Upsert",
+            "Delete"
+          ]
+        },
+        {
+          "role": "Administrator",
+          "rights": [
+            "Read",
+            "Upsert",
+            "Delete"
+          ]
+        }
+      ],
+      "objectTypeName": "t_student"
+    },
+    {
+      "permissions": [
+        {
+          "role": "World",
+          "rights": [
+            "Read"
+          ]
+        },
+        {
+          "role": "Authenticated",
+          "rights": [
+            "Read",
+            "Upsert"
+          ]
+        },
+        {
+          "role": "Creator",
+          "rights": [
+            "Read",
+            "Upsert",
+            "Delete"
+          ]
+        },
+        {
+          "role": "Administrator",
+          "rights": [
+            "Read",
+            "Upsert",
+            "Delete"
+          ]
+        }
+      ],
+      "objectTypeName": "t_article"
+    }
+  ],
+  "objectTypes": [
+    {
+      "indexes": [
+        {
+          "indexName": "id_idx",
+          "indexList": [
+            {
+              "fieldName": "id",
+              "sortType": "ASC"
+            }
+          ]
+        }
+      ],
+      "objectTypeName": "t_student",
+      "fields": [
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "id",
+          "notNull": true,
+          "isSensitive": false,
+          "belongPrimaryKey": true,
+          "fieldType": "IntAutoIncrement"
+        },
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "name",
+          "notNull": false,
+          "isSensitive": false,
+          "belongPrimaryKey": false,
+          "fieldType": "String"
+        },
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "age",
+          "notNull": false,
+          "isSensitive": false,
+          "belongPrimaryKey": false,
+          "fieldType": "Short"
+        }
+      ]
+    },
+    {
+      "indexes": [
+        {
+          "indexName": "id_idx",
+          "indexList": [
+            {
+              "fieldName": "id",
+              "sortType": "DESC"
+            }
+          ]
+        }
+      ],
+      "objectTypeName": "t_article",
+      "fields": [
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "id",
+          "notNull": true,
+          "isSensitive": false,
+          "belongPrimaryKey": true,
+          "fieldType": "IntAutoIncrement"
+        },
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "title",
+          "notNull": false,
+          "isSensitive": false,
+          "belongPrimaryKey": false,
+          "fieldType": "String"
+        },
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "uid",
+          "notNull": false,
+          "isSensitive": false,
+          "belongPrimaryKey": false,
+          "fieldType": "String"
+        },
+        {
+          "isNeedEncrypt": false,
+          "fieldName": "createTime",
+          "notNull": false,
+          "isSensitive": false,
+          "belongPrimaryKey": false,
+          "fieldType": "Date"
+        }
+      ]
+    }
+  ]
 }
