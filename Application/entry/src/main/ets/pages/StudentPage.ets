@@ -12,6 +12,14 @@ struct StudentPage {
   private database:Database =null
   //定义动态偏移量
   private dataOffset:number=0
+  //按年龄搜索
+  @State searchAge: string = ''
+  //存储显示搜索框
+  @State showSearch:boolean=false
+  //记录起始坐标就好
+  private startY: number = 0
+  //获取第一条记录的索引
+  private startIndex: number = 0
 
   //2.初始化数据库放在aboutToAppear
   async aboutToAppear(){
@@ -80,7 +88,21 @@ struct StudentPage {
       .width('100%')
       .height(36)
       .backgroundColor('black')
-
+      //搜索框组件
+      if(this.showSearch){
+        Search()
+          .searchButton("搜索")
+          .onChange(value=>{
+            //将用户的值获取到
+            this.searchAge=value
+          })
+          .onSubmit(()=>{
+            //根据用户给的年龄查询要重新初始化
+            this.studentList=[]
+            this.dataOffset=0
+            this.search('','',this.searchAge,this.dataOffset)
+          })
+      }
       List({ space:52 }) {
         ForEach(this.studentList, (stu: t_student) => {
           ListItem() {
@@ -110,6 +132,32 @@ struct StudentPage {
         this.dataOffset+=10;
         this.search('','','',this.dataOffset)
       })
+      //这里就要给List组件加一个叫做onTouch触屏事件,在onTouch触屏事件中它就会传过来一个event对象
+      .onTouch(event=>{ //event存储的是触屏发生时的一些信息
+        //event中哪些重要信息呢？
+        //event.type它就表示我们触屏的事件类型:1.Down:表示按下去,手指已经触摸到屏幕了  2.Up:手指松开了，从屏幕离开  3.Move:当我们触摸屏幕之后滑动的过程
+        //event.touches就是触点，它是一个数组,之所以是个数组是因为可以多点触控，比如一根手指，那数组里就一个元素，如果是多根手指触碰了屏幕那么数组里就会有多个元素
+        switch (event.type) {
+          //在按下时，记录起始坐标的Y
+          case TouchType.Down:
+            this.startY = event.touches[0].y
+            break;
+        //在滑动时，随时记录结束坐标的Y
+          case TouchType.Move:
+            const endY = event.touches[0].y
+            //当两者距离》25就触发对应的事件
+            if (endY - this.startY >= 35 && this.startIndex===0) {
+              this.showSearch = true
+            } else if (this.startY - endY >= 25) {
+              this.showSearch = false
+            }
+            break;
+        }
+      })
+      .onScrollIndex((start,end)=>{ //start:第一条记录它的索引值,end:最后一条记录它的索引值
+        this.startIndex=start
+      })
+
       Divider()
     }
     .width('100%')
